@@ -1,0 +1,74 @@
+//global supply chain viewer
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>City Population Bars</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.99/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.99/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="cesiumContainer"></div>
+
+    <script>
+        // Cesium ionのアクセストークン
+        Cesium.Ion.defaultAccessToken = ' ここに、MyTokenをセットする ';
+
+        // 開始時間と終了時間を設定します
+        var start = Cesium.JulianDate.fromIso8601("2024-09-01T00:00:00Z");
+        var stop = Cesium.JulianDate.fromIso8601("2029-12-31T23:59:59Z");
+
+        // Clockを作成します
+        var clock = new Cesium.Clock({
+            startTime: start,
+            currentTime: start,
+            stopTime: stop,
+
+            //multiplier: 151200, // 一週間=4秒
+            multiplier:  604800, // 一週間=1秒
+
+            clockRange: Cesium.ClockRange.LOOP_STOP, // 時間がstopTimeに達したらstartTimeに戻ります
+            clockStep: Cesium.ClockStep.SYSTEM_CLOCK_MULTIPLIER // 時間は現実の時間に連動して進みます
+        });
+
+        // ViewerにClockを設定します
+        const viewer = new Cesium.Viewer('cesiumContainer', {
+            clockViewModel: new Cesium.ClockViewModel(clock)
+            // imageryProvider: new Cesium.IonImageryProvider({accessToken: Cesium.Ion.defaultAccessToken})
+        });
+
+
+        // start shape definitions
+        var czml = [
+        {
+            "id": "document",
+            "name": "CZML Path",
+            "version": "1.0"
+        }, 
+
+// START
+
+
+// ここに、サプライチェーン計画のロット・データから変換したCZMLをコピーする
+
+
+// END of BOXs
+
+// STOP
+
+];
+
+
+        const dataSourcePromise = Cesium.CzmlDataSource.load(czml);
+        viewer.dataSources.add(dataSourcePromise);
+
+
+        viewer.zoomTo(dataSourcePromise);
+
+
+    </script>
+</body>
+</html>
+
