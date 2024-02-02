@@ -5,5 +5,10 @@ Visualising Supply Chain activities on earth(secium) with translating Supply Cha
 サプライチェーン計画Global weekly PSI Planは、ISO標準の週を単位として、製品ロット単位の生産、出荷、搬送、着荷、在庫、販売というビジネス活動をグローバルレベルで計画します。
 共通計画単位CPU:Commomn Planning Unitと呼ぶ、製品ロット単位の計画データを元に、地球儀(secium)の上に、1製品ロット=1立方体という対応で、サプライチェーンのモノの動きを可視化します。
 本ソースコードに関連するSNSの記事は、「グローバル・サプライチェーンの動きを地球儀(secium)の上に可視化する」
+no+eの下記URL
 https://note.com/osuosu1123/n/nfa1df807853b
+または、
+はてなブログの下記URL
+https://osuosu1123.hatenablog.com/entry/2024/02/02/114159?_gl=1*ogk58s*_gcl_au*NzA3NDY0NTIxLjE3MDY4NDEwMzQ.
 を参照ください。
+いずれのURLも同じ内容の記事です。
